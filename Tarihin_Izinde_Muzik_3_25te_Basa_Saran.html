@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarihin İzinde: 6 Büyük Olay | Hazırlayan: R. Can ARMAN</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@600;700;900&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0a0806',
+                        parchment: {
+                            50: '#fcfaf5',
+                            100: '#f5e6ca',
+                            200: '#e6d3b1',
+                            300: '#d5bd95',
+                            800: '#261f18',
+                            900: '#1c1813',
+                            950: '#120e0b'
+                        },
+                        gold: {
+                            300: '#f5e396',
+                            400: '#e5ca65',
+                            500: '#d4af37',
+                            600: '#b08d26',
+                            700: '#856717'
+                        },
+                        crimson: {
+                            800: '#8b0000',
+                            900: '#520000'
+                        },
+                        ink: {
+                            100: '#c2b29b',
+                            300: '#8a7a65',
+                            900: '#181410'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['"Cinzel Decorative"', 'serif'],
+                        heading: ['"Cinzel"', 'serif'],
+                        body: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ambient Historical Texture Background */
+        .bg-museum-pattern {
+            background-color: #0a0806;
+            background-image: 
+                radial-gradient(circle at 50% 30%, rgba(38, 31, 24, 0.8) 0%, rgba(10, 8, 6, 0.98) 75%),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23d4af37' fill-opacity='0.02'/%3E%3C/svg%3E");
+        }
+
+        /* Larger, richer editorial illustration panels */
+        .history-illustration {
+            display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+            min-height: 230px; padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid rgba(229,202,101,.62);
+            border-radius: 1.25rem; overflow: hidden; position: relative; isolation: isolate;
+            background:
+              radial-gradient(ellipse at 78% 48%, rgba(212,175,55,.19) 0%, transparent 38%),
+              linear-gradient(115deg, rgba(10,8,6,.98) 0%, rgba(38,31,24,.94) 55%, rgba(71,48,20,.72) 100%);
+            box-shadow: inset 0 0 0 5px rgba(212,175,55,.045), 0 16px 35px rgba(0,0,0,.24);
+        }
+        .history-illustration::before {
+            content: ""; position: absolute; inset: 12px; border: 1px solid rgba(212,175,55,.18);
+            border-radius: .85rem; pointer-events: none; z-index: -1;
+            background: repeating-linear-gradient(135deg, transparent 0 18px, rgba(229,202,101,.025) 19px 20px);
+        }
+        .history-illustration::after {
+            content: "✦"; position: absolute; right: 20%; top: 4%; color: rgba(245,227,150,.4);
+            font-size: 2rem; text-shadow: 0 0 22px rgba(212,175,55,.5); pointer-events: none;
+        }
+        .history-illustration .art-icon {
+            font-size: clamp(5rem, 12vw, 8.5rem); color: #e5ca65; z-index: 1; flex-shrink: 0;
+            filter: drop-shadow(0 8px 10px rgba(0,0,0,.75)) drop-shadow(0 0 22px rgba(212,175,55,.28));
+            margin-right: clamp(.25rem, 3vw, 2rem); transform: rotate(-5deg);
+        }
+        .history-illustration .art-caption { font-family: 'Cinzel',serif; letter-spacing: .12em;
+            text-transform: uppercase; color: #f5e396; font-size: clamp(1rem, 2.4vw, 1.55rem); font-weight: 700;
+            line-height: 1.45; max-width: 25rem; text-shadow: 0 2px 12px rgba(0,0,0,.8); z-index: 1; }
+        .history-illustration .art-subtitle { color: #e0d0b2; font-style: italic; font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-top: .7rem; z-index: 1; }
+        .history-illustration .art-stamp { border: 1px solid rgba(245,227,150,.7); color: #f5e396;
+            padding: .6rem .8rem; font-family: 'Cinzel',serif; font-size: .72rem; letter-spacing: .12em;
+            transform: rotate(-7deg); z-index: 1; background: rgba(10,8,6,.35); box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+        @media (max-width: 640px) {
+            .history-illustration { min-height: 185px; padding: 1.25rem; gap: .6rem; }
+            .history-illustration .art-icon { font-size: clamp(3.8rem, 16vw, 5.5rem); margin-right: .2rem; }
+            .history-illustration .art-stamp { display:none; }
+            .history-illustration .art-caption { letter-spacing: .06em; }
+            .history-illustration::before { inset: 8px; }
+        }
+
+        /* Gold Text Glow */
+        .text-gold-glow {
+            text-shadow: 0 0 16px rgba(212, 175, 55, 0.35);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0806;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #856717;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+
+        /* Fade Animations */
+        .fade-in-section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-museum-pattern text-parchment-100 font-body antialiased selection:bg-gold-500 selection:text-obsidian min-h-screen flex flex-col justify-between relative">
+
+    <!-- READING PROGRESS BAR -->
+    <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-gold-600 via-gold-400 to-gold-300 z-50 transition-all duration-150" id="progressBar" style="width: 0%;"></div>
+
+    <!-- ENTRY LANDING PORTAL OVERLAY (KONU SEÇİM EKRANI) -->
+    <div id="entryPortal" class="fixed inset-0 z-50 bg-obsidian/95 backdrop-blur-xl flex items-center justify-center p-4 transition-all duration-500">
+        <div class="max-w-4xl w-full bg-parchment-900 border-2 border-gold-500/50 rounded-2xl p-6 sm:p-10 shadow-2xl space-y-8 text-center relative overflow-hidden">
+            <!-- Decorative Gold Corner Accents -->
+            <div class="absolute top-2 left-2 text-gold-500/30 text-2xl"><i class="fa-solid fa-om"></i></div>
+            <div class="absolute top-2 right-2 text-gold-500/30 text-2xl"><i class="fa-solid fa-om"></i></div>
+
+            <div class="space-y-3">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/15 border border-gold-500/40 text-gold-300 font-heading text-xs tracking-widest uppercase">
+                    <i class="fa-solid fa-graduation-cap text-gold-400"></i> Tarih Araştırma Projesi
+                </div>
+                <h1 class="font-display text-3xl sm:text-5xl text-gold-400 font-bold text-gold-glow">TARİHİN İZİNDE: 5 BÜYÜK OLAY</h1>
+                <p class="font-sans text-xs text-gold-300 uppercase tracking-widest font-semibold">Hazırlayan: <span class="text-gold-400 font-bold">R. Can ARMAN</span></p>
+                <p class="font-body text-lg text-parchment-200 max-w-2xl mx-auto italic">
+                    İncelemek istediğiniz tarihi olayı seçerek doğrudan ilgili müze kütüphane bölümüne geçiş yapabilirsiniz.
+                </p>
+            </div>
+
+            <!-- Topic Selection Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+                <!-- Topic 1 -->
+                <button onclick="selectPortalTopic('piri-reis')" class="p-4 rounded-xl bg-obsidian/80 border border-gold-500/30 hover:border-gold-500 hover:bg-parchment-800/60 transition-all duration-300 group flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-compass text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-sans text-gold-400 uppercase tracking-widest block">1513</span>
+                            <h3 class="font-heading text-sm text-gold-300 font-bold group-hover:text-gold-400">Piri Reis Haritası</h3>
+                        </div>
+                    </div>
+                    <p class="font-body text-xs text-ink-100 line-clamp-2">Gelibolu'da ceylan derisine çizilen ve Antarktika gizemini barındıran haritanın hikayesi.</p>
+                </button>
+
+                <!-- Topic 2 -->
+                <button onclick="selectPortalTopic('hezarfen')" class="p-4 rounded-xl bg-obsidian/80 border border-gold-500/30 hover:border-gold-500 hover:bg-parchment-800/60 transition-all duration-300 group flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-feather-pointed text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-sans text-gold-400 uppercase tracking-widest block">1632</span>
+                            <h3 class="font-heading text-sm text-gold-300 font-bold group-hover:text-gold-400">Hezarfen'in Uçuşu</h3>
+                        </div>
+                    </div>
+                    <p class="font-body text-xs text-ink-100 line-clamp-2">Galata Kulesi'nden Üsküdar'a uzanan 3358 metrelik tarihi süzülüş ve detayları.</p>
+                </button>
+
+                <!-- Topic 3 -->
+                <button onclick="selectPortalTopic('rosetta')" class="p-4 rounded-xl bg-obsidian/80 border border-gold-500/30 hover:border-gold-500 hover:bg-parchment-800/60 transition-all duration-300 group flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-monument text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-sans text-gold-400 uppercase tracking-widest block">1799</span>
+                            <h3 class="font-heading text-sm text-gold-300 font-bold group-hover:text-gold-400">Rosetta Taşı</h3>
+                        </div>
+                    </div>
+                    <p class="font-body text-xs text-ink-100 line-clamp-2">Antik Mısır hiyerogliflerinin 2000 yıllık şifresini çözen üç dilli taşın serüveni.</p>
+                </button>
+
+                <!-- Topic 4 -->
+                <button onclick="selectPortalTopic('gobeklitepe')" class="p-4 rounded-xl bg-obsidian/80 border border-gold-500/30 hover:border-gold-500 hover:bg-parchment-800/60 transition-all duration-300 group flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-archway text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-sans text-gold-400 uppercase tracking-widest block">M.Ö. 9600</span>
+                            <h3 class="font-heading text-sm text-gold-300 font-bold group-hover:text-gold-400">Göbeklitepe</h3>
+                        </div>
+                    </div>
+                    <p class="font-body text-xs text-ink-100 line-clamp-2">Tarih kitaplarını yeniden yazdıran insanlığın bilinen en eski inanç merkezi.</p>
+                </button>
+
+                <!-- Topic 5 -->
+                <button onclick="selectPortalTopic('fetih')" class="p-4 rounded-xl bg-obsidian/80 border border-gold-500/30 hover:border-gold-500 hover:bg-parchment-800/60 transition-all duration-300 group flex flex-col justify-between space-y-3 sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-shield-halved text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-sans text-gold-400 uppercase tracking-widest block">1453</span>
+                            <h3 class="font-heading text-sm text-gold-300 font-bold group-hover:text-gold-400">İstanbul'un Fethi</h3>
+                        </div>
+                    </div>
+                    <p class="font-body text-xs text-ink-100 line-clamp-2">Dev Şahi topları, karadan yürütülen gemiler ve Orta Çağ'ın kapanışı.</p>
+                </button>
+
+                <!-- Topic 6 -->
+                <button onclick="selectPortalTopic('yazinin-icadi')" class="p-4 rounded-xl bg-obsidian/80 border border-gold-500/30 hover:border-gold-500 hover:bg-parchment-800/60 transition-all duration-300 group flex flex-col justify-between space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-obsidian transition-colors">
+                            <i class="fa-solid fa-tablet-screen-button text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-sans text-gold-400 uppercase tracking-widest block">M.Ö. 3200 civarı</span>
+                            <h3 class="font-heading text-sm text-gold-300 font-bold group-hover:text-gold-400">Yazının İcadı</h3>
+                        </div>
+                    </div>
+                    <p class="font-body text-xs text-ink-100 line-clamp-2">Mezopotamya'da çivi yazısının doğuşu ve insanlığın hafızasında yeni bir çağ.</p>
+                </button>
+
+                <!-- Explore All Option -->
+                <button onclick="selectPortalTopic('all')" class="p-4 rounded-xl bg-gradient-to-r from-gold-700/40 via-gold-600/30 to-gold-700/40 border border-gold-500 hover:border-gold-300 transition-all duration-300 flex flex-col justify-center items-center text-center space-y-2 col-span-1 sm:col-span-2 lg:col-span-3">
+                    <div class="font-heading text-sm text-gold-300 font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-scroll mr-2"></i> Tüm Konuları Sırayla İncele
+                    </div>
+                    <span class="text-[11px] font-sans text-parchment-200">Giriş yapıp tüm tarihsel anlatımları kapsayıcı şekilde okuyun.</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN FIXED NAVIGATION HEADER -->
+    <header class="fixed top-1 left-0 right-0 z-40 bg-obsidian/90 backdrop-blur-md border-b border-gold-500/30 px-4 lg:px-8 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#hero" onclick="openPortal()" class="flex items-center gap-3 group">
+                <i class="fa-solid fa-book-atlas text-2xl text-gold-400 group-hover:rotate-12 transition-transform duration-300"></i>
+                <div class="flex flex-col">
+                    <span class="font-heading text-lg md:text-xl text-gold-400 tracking-wider font-bold leading-tight">TARİHİN İZİNDE</span>
+                    <span class="font-sans text-[10px] text-gold-300/80 tracking-widest uppercase font-semibold">Hazırlayan: R. Can ARMAN</span>
+                </div>
+            </a>
+
+            <!-- Quick Navigation -->
+            <nav class="hidden lg:flex items-center space-x-5 font-heading text-xs text-parchment-200 uppercase tracking-wider">
+                <a href="#piri-reis" class="hover:text-gold-400 transition-colors">1. Piri Reis</a>
+                <a href="#hezarfen" class="hover:text-gold-400 transition-colors">2. Hezarfen</a>
+                <a href="#rosetta" class="hover:text-gold-400 transition-colors">3. Rosetta</a>
+                <a href="#gobeklitepe" class="hover:text-gold-400 transition-colors">4. Göbeklitepe</a>
+                <a href="#fetih" class="hover:text-gold-400 transition-colors">5. Fetih 1453</a>
+                <a href="#yazinin-icadi" class="hover:text-gold-400 transition-colors">6. Yazının İcadı</a>
+                <a href="#quiz" class="hover:text-gold-400 transition-colors text-gold-400 font-bold">Bilgi Testi</a>
+            </nav>
+
+            <!-- Controls: Topic Switcher, Sound & Student Credit -->
+            <div class="flex items-center gap-3">
+                <button onclick="openPortal()" class="px-3 py-1.5 rounded-md border border-gold-500/40 bg-parchment-900 hover:bg-gold-500 hover:text-obsidian text-xs font-sans text-gold-300 font-semibold transition-all">
+                    <i class="fa-solid fa-list mr-1"></i> Konu Seç
+                </button>
+
+                <!-- Compact embedded music player -->
+                <button id="musicToggleBtn" onclick="toggleBackgroundMusic()" aria-expanded="false" aria-controls="musicPlayerPanel" class="flex items-center gap-2 px-3 py-1.5 rounded-md border border-gold-500/40 bg-parchment-900 hover:border-gold-500 text-xs font-sans text-gold-400 transition-all">
+                    <i class="fa-solid fa-music"></i>
+                    <span id="musicToggleLabel" class="hidden sm:inline">Tını Başlat</span>
+                </button>
+                <div id="musicPlayerPanel" class="hidden fixed top-16 right-3 sm:right-6 z-[60] w-[min(86vw,280px)] rounded-xl border border-gold-500/50 bg-parchment-900 p-3 shadow-2xl">
+                    <div class="mb-2 flex items-center justify-between gap-3">
+                        <span class="font-heading text-xs font-bold tracking-wide text-gold-300">Arka Plan Müziği</span>
+                        <button onclick="closeMusicPanel()" aria-label="Müzik panelini kapat" class="rounded px-2 py-1 text-gold-300 hover:bg-gold-500/10"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <audio id="backgroundAudio" controls preload="none" class="w-full" style="height:38px;max-width:100%">
+                        <source src="muzik.mp3" type="audio/mpeg">
+                        Tarayıcın ses oynatmayı desteklemiyor.
+                    </audio>
+                    <p class="mt-2 font-sans text-[11px] text-parchment-200">Müzik dosyası: <code>muzik.mp3</code>. Ses düzeyini buradan ayarlayabilirsin.</p>
+                </div>
+
+                <span class="hidden sm:inline-block px-3 py-1 rounded bg-gold-500/10 border border-gold-500/40 text-gold-400 font-sans text-xs font-semibold">
+                    <i class="fa-solid fa-user-graduate mr-1"></i> R. Can ARMAN
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-[75vh] flex items-center justify-center pt-28 pb-16 px-4 overflow-hidden">
+        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 font-heading text-xs tracking-widest uppercase">
+                <i class="fa-solid fa-landmark text-gold-400"></i> Akademik İnceleme & Araştırma Metinleri
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 leading-tight text-gold-glow">
+                DÜNYA VE TÜRK TARİHİNE DAMGA VURAN 5 BÜYÜK OLAY
+            </h1>
+
+            <p class="font-body text-xl sm:text-2xl text-parchment-200 max-w-3xl mx-auto leading-relaxed italic">
+                "Gelibolu sahillerinden Galata Kulesi'ne, Reşid Kalesi'nden Urfa steplerine ve İstanbul surlarına uzanan tarihin en derin dönüşüm noktaları."
+            </p>
+
+            <div class="pt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-sans text-gold-400">
+                <span class="px-3 py-1 rounded bg-parchment-900 border border-gold-500/30">Proje Danışmanı Tarih Ödevi</span>
+                <span class="px-3 py-1 rounded bg-parchment-900 border border-gold-500/30">Hazırlayan: <strong>R. Can ARMAN</strong></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED TOPICS CONTAINER -->
+    <main class="max-w-6xl mx-auto px-4 space-y-24 pb-24">
+
+        <!-- TOPIC 1: PİRİ REİS VE 1513 DÜNYA HARİTASI -->
+        <article id="piri-reis" class="bg-parchment-900/90 border border-gold-500/40 rounded-2xl p-6 sm:p-12 shadow-2xl space-y-8 relative overflow-hidden">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gold-500/30 pb-6">
+                <div>
+                    <span class="text-gold-400 font-heading text-xs uppercase tracking-widest font-bold">I. Bölüm</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl text-gold-300 font-bold">Piri Reis ve 1513 Gizemli Dünya Haritası</h2>
+                    <p class="font-body text-lg text-ink-100 italic">Ceylan derisine işlenen kartografya mucizesi ve çözülemeyen Antarktika bilmecesi.</p>
+                </div>
+                <div class="text-xs font-sans text-gold-400/90 bg-obsidian/80 px-4 py-2 rounded border border-gold-500/30 text-right">
+                    <div>Tarih: <strong>1513 (Hicri 919)</strong></div>
+                    <div>Yazıldığı Yer: <strong>Gelibolu</strong></div>
+                </div>
+            </div>
+
+            <div class="history-illustration" role="img" aria-label="Denizlerin Hafızası temalı editoryal illüstrasyon">
+                <div><div class="art-caption">Denizlerin Hafızası</div><div class="art-subtitle">1513 • Eski dünya haritaları</div></div>
+                <i class="fa-solid fa-compass-drafting art-icon"></i><span class="art-stamp">CARTOGRAPHIA</span>
+            </div>
+            <div class="space-y-6 font-body text-lg sm:text-xl text-parchment-200 leading-relaxed">
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">1. Gelibolu'da Bir Deniz Dehasının Doğuşu</h3>
+                <p>
+                    Büyük Türk denizcisi ve kartografı Piri Reis, Osmanlı donanmasında geçirdiği uzun yılların ardından Amcası Kemal Reis'in vefatıyla birlikte Gelibolu Tersanesi'ne çekilmiştir. Burada, dünya denizcilik tarihinin en büyük şaheserlerinden biri olan 1513 tarihli Dünya Haritası'nı hazırlamaya koyulmuştur. Piri Reis haritayı tek bir kaynaktan değil, dönemin ulaşılabilecek tüm doğu ve batı kaynaklarını sentezleyerek oluşturmuştur. Kendi ifadesiyle 20'den fazla haritayı (bunların arasında 8 Arapça harita, 4 Portekizce harita ve Christopher Columbus'un Batı Hint Adaları'na ait kayıp haritası da bulunmaktadır) yan yana getirerek tek bir ceylan derisi üzerine büyük bir titizlikle çizmiştir.
+                </p>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">2. Haritanın İnanılmaz Teknik Detayları ve Projeksiyon Dehası</h3>
+                <p>
+                    Harita modern anlamda enlem ve boylam çizgileri yerine, dönemin Portolan haritalarında kullanılan yön hatlarına (rüzgar gülleri) sahiptir. Haritada 16 merkezli pusula gülü bulunmakta ve bu güllerden çıkan ışınsal çizgiler denizcilerin rota hesaplamalarına imkan tanımaktadır. Harita üzerinde yer alan ayrıntılı Osmanlıca notlar (derkenarlar), haritanın sadece görsel bir çizim değil, aynı zamanda coğrafi ve etnografik bir ansiklopedi olduğunu kanıtlamaktadır. Notlarda Güney Amerika'nın yerlileri, fauna ve florası, efsanevi yaratıklar ve denizcilik deneyimleri detaylandırılmıştır.
+                </p>
+
+                <div class="my-6 p-6 rounded-xl bg-obsidian border border-gold-500/30 space-y-3">
+                    <h4 class="font-heading text-sm text-gold-400 font-bold uppercase tracking-wider"><i class="fa-solid fa-circle-info mr-2"></i> Bilim Dünyasını Sarsan Antarktika Gizemi</h4>
+                    <p class="font-body text-base text-parchment-200">
+                        Piri Reis haritasının en çok tartışılan bölümü, Güney Amerika'nın güney devamı olarak gösterilen ve günümüz Antarktika kıyılarıyla büyük benzerlik taşıyan kara parçasıdır. Antarktika kıtası resmi olarak ilk kez 1820 yılında keşfedilmiş olmasına rağmen, Piri Reis'in 1513'te bu bölgeyi buzullarla kaplı olmadan çizdiği iddiaları bilim insanlarını, jeologları ve tarihçileri hayrete düşürmüştür. Bazı araştırmacılar bunun kıtanın binlerce yıl önceki buzulsuz buzulaltı topoğrafyası olduğunu savunurken, kimileri ise bu çizimin Güney Amerika'nın doğuya bükülmüş bir projeksiyon hatası olduğunu öne sürmektedir.
+                    </p>
+                </div>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">3. 1929 Topkapı Sarayı Keşfi ve Günümüzdeki Önemi</h3>
+                <p>
+                    Harita, Piri Reis tarafından 1517 Mısır Seferi sırasında Kahire'de Yavuz Sultan Selim'e takdim edilmiştir. Daha sonra saray arşivlerine kaldırılan eser, tam 412 yıl boyunca unutulmuştur. 9 Kasım 1929 tarihinde Topkapı Sarayı Müzesi'nde envanter çalışmaları yürütülürken Müze Müdürü Halil Ethem Eldem ve Alman bilim insanı Gustav Adolf Deissmann tarafından tesadüfen bir tomar derinin arasında bulunmuştur. Günümüzde yalnızca dokuzda birlik sol parçası (Atlas Okyanusu, Batı Afrika ve Güney Amerika kıyıları) elimizde bulunan harita, kartografya tarihinin en kıymetli belgeleri arasında ilk sırada yer almaktadır.
+                </p>
+            </div>
+        </article>
+
+        <!-- TOPIC 2: HEZARFEN AHMED ÇELEBİ VE 1632 GALATA UÇUŞU -->
+        <article id="hezarfen" class="bg-parchment-900/90 border border-gold-500/40 rounded-2xl p-6 sm:p-12 shadow-2xl space-y-8 relative overflow-hidden">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gold-500/20 pb-6">
+                <div>
+                    <span class="text-gold-400 font-heading text-xs uppercase tracking-widest font-bold">II. Bölüm</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl text-gold-300 font-bold">Hezarfen Ahmed Çelebi ve 1632 Galata Uçuşu</h2>
+                    <p class="font-body text-lg text-ink-100 italic">Kendi tasarladığı kanatlarla Boğaz'ı aşan Türk bilgininin insanlık havacılık tarihindeki yeri.</p>
+                </div>
+                <div class="text-xs font-sans text-gold-400/90 bg-obsidian/80 px-4 py-2 rounded border border-gold-500/30 text-right">
+                    <div>Tarih: <strong>1632 (Padişah IV. Murad Devri)</strong></div>
+                    <div>Uçuş Rotası: <strong>Galata Kulesi - Üsküdar</strong></div>
+                </div>
+            </div>
+
+            <div class="history-illustration" role="img" aria-label="Gökyüzüne İlk Adım temalı editoryal illüstrasyon">
+                <div><div class="art-caption">Gökyüzüne İlk Adım</div><div class="art-subtitle">1632 • Galata’dan Üsküdar’a</div></div>
+                <i class="fa-solid fa-feather-pointed art-icon"></i><span class="art-stamp">VOLARE</span>
+            </div>
+            <div class="space-y-6 font-body text-lg sm:text-xl text-parchment-200 leading-relaxed">
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">1. "Bin Fenli" Bir Alim ve Leonardo da Vinci İzleri</h3>
+                <p>
+                    17. yüzyılda Osmanlı İmparatorluğu'nda yaşayan Ahmed Çelebi, geniş bilimsel bilgisi, anatomi, fizik ve mekanik alanındaki yetenekleri nedeniyle halk ve saray çevresi tarafından "Hezarfen" (Bin ilimli / Bin fenli) unvanıyla anılmıştır. Hezarfen, İslam alimi İsmail Cevheri'nin havacılık denemelerini ve Leonardo da Vinci'nin kuş anatomisi ile kanat yapısı üzerindeki çizimlerini yıllarca incelemiştir. Kuşların süzülme mekanizmalarını taklit ederek (biyomimikri) hafif tahta çıtalar, kumaş ve tüylerden oluşan aerodinamik bir kanat sistemi tasarlamıştır.
+                </p>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">2. Okmeydanı Tatbikatları ve Tarihi Uçuş Anı</h3>
+                <p>
+                    Galata Kulesi'nden atlamadan önce Okmeydanı'nda rüzgar ölçümleri yapmış, hazırladığı kanat mekanizmasıyla defalarca kısa mesafeli deneme uçuşları gerçekleştirmiştir. 1632 yılının rüzgarlı bir günü, Galata Kulesi'nin tepesine çıkan Hezarfen, kulenin yaklaşık 62 metrelik yüksekliğinden kendini rüzgara bırakmıştır. İstanbul halkının ve Sarayburnu'ndaki Sinan Paşa Köşkü'nden kendisini izleyen Padişah IV. Murad'ın gözleri önünde Lodos rüzgarını arkasına alarak süzülmeye başlamıştır. İstanbul Boğazı'nı havadan geçerek yaklaşık 3.358 metrelik mesafeyi katedip Üsküdar'da Doğancılar Meydanı'na sorunsuz bir iniş yapmıştır.
+                </p>
+
+                <div class="my-6 p-6 rounded-xl bg-obsidian border border-gold-500/30 space-y-3">
+                    <h4 class="font-heading text-sm text-gold-400 font-bold uppercase tracking-wider"><i class="fa-solid fa-scroll mr-2"></i> Evliya Çelebi'nin Seyahatname Kayıtları ve IV. Murad'ın Tepkisi</h4>
+                    <p class="font-body text-base text-parchment-200">
+                        Bu tarihi olay hakkındaki en temel ve detaylı yazılı kaynak Evliya Çelebi'nin ünlü eseri <em>Seyahatname</em>'dir. Evliya Çelebi olay sonrasını şöyle aktarır: <em>"İbtida Okmeydanı'nın minberi üzere kartal kanatları ile sekiz dokuz kere havada pervaz ederek talim etmiştir. Sonra Sultan Murad Han Sarayburnu'nda Sinan Paşa Köşkü'nden temaşa ederken Galata Kulesi'nin ta tepesinden uçup Üsküdar'da Doğancılar Meydanı'na inmiştir. Sonra Murad Han kendisine bir kese altın ihsan edip: 'Bu adam korkulacak bir ademdir, her ne murad ederse elinden gelir. Böyle kimselerin bekası caiz değildir' diye Cezayir'e nefyetmiştir."</em>
+                    </p>
+                </div>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">3. Havacılık Tarihindeki Yeri ve Mirası</h3>
+                <p>
+                    Hezarfen Ahmed Çelebi'nin gerçekleştirdiği bu uçuş, insanlık havacılık tarihinde motor gücü olmadan, sadece aerodinamik kuvvetler ve rüzgar enerjisiyle bir kıtadan diğerine (Avrupa'dan Asya'ya) yapılan ilk başarılı kıtalararası uçuş kabul edilmektedir. Sürgün edildiği Cezayir'de vefat etmesine rağmen adı, bugün İstanbul Atatürk Havalimanı yakınlarındaki Hezarfen Havaalanı'nda ve dünya havacılık literatüründe cesaretin simgesi olarak yaşamaktadır.
+                </p>
+            </div>
+        </article>
+
+        <!-- TOPIC 3: ROSETTA TAŞI VE HİYEROGLİFLERİN ÇÖZÜLMESİ -->
+        <article id="rosetta" class="bg-parchment-900/90 border border-gold-500/40 rounded-2xl p-6 sm:p-12 shadow-2xl space-y-8 relative overflow-hidden">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gold-500/20 pb-6">
+                <div>
+                    <span class="text-gold-400 font-heading text-xs uppercase tracking-widest font-bold">III. Bölüm</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl text-gold-300 font-bold">Rosetta Taşı ve Hiyerogliflerin Çözülmesi</h2>
+                    <p class="font-body text-lg text-ink-100 italic">2000 yıllık Antik Mısır gizemini aydınlatan üç dilli efsanevi granodiyorit taş.</p>
+                </div>
+                <div class="text-xs font-sans text-gold-400/90 bg-obsidian/80 px-4 py-2 rounded border border-gold-500/30 text-right">
+                    <div>Keşif Tarihi: <strong>1799 (Napolyon Mısır Seferi)</strong></div>
+                    <div>Çözüm Tarihi: <strong>1822 (Jean-François Champollion)</strong></div>
+                </div>
+            </div>
+
+            <div class="history-illustration" role="img" aria-label="Taşlara Kazınan Dil temalı editoryal illüstrasyon">
+                <div><div class="art-caption">Taşlara Kazınan Dil</div><div class="art-subtitle">1799 • Üç yazı, tek anahtar</div></div>
+                <i class="fa-solid fa-monument art-icon"></i><span class="art-stamp">DECIPHER</span>
+            </div>
+            <div class="space-y-6 font-body text-lg sm:text-xl text-parchment-200 leading-relaxed">
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">1. Reşid Kalesi'nde Tesadüfi Keşif</h3>
+                <p>
+                    1799 yılında Fransız İmparatoru Napolyon Bonapart'ın Mısır Seferi sırasında, Fransız mühendis yüzbaşı Pierre-François Bouchard komutasındaki askerler Reşid (Rosetta) kenti yakınlarındaki bir kalenin tahkimat çalışmaları sırasında siyah renkli, üzeri yazıtlarla dolu devasa bir taş blok bulmuşlardır. 112 santim yüksekliğinde, 75 santim genişliğinde ve 760 kilogram ağırlığındaki bu granodiyorit taş, Antik Çağ'ın en büyük dilbilim anahtarı olacaktır.
+                </p>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">2. Taşın Üzerindeki Üç Farklı Yazı Türünün Sırrı</h3>
+                <p>
+                    Rosetta Taşı'nın üzerinde M.Ö. 196 yılında Mısır Kralı V. Ptolemaios tarafından yayınlanan bir rahipler fermanı yer almaktadır. Ancak taşın eşsiz kılan özellik, aynı metnin üç farklı yazı sistemiyle kazınmış olmasıdır:
+                </p>
+                <ul class="list-disc list-inside space-y-2 pl-4 text-parchment-200">
+                    <li><strong>Hiyeroglif Yazısı:</strong> Tapınaklarda rahipler ve kutsal metinler için kullanılan resim yazısı.</li>
+                    <li><strong>Demotik Yazı:</strong> Mısır halkının günlük idari ve ticari işlerde kullandığı el yazısı.</li>
+                    <li><strong>Antik Yunanca:</strong> İskender sonrası Mısır'ı yöneten Ptolemaios Hanedanı'nın resmi devlet dili.</li>
+                </ul>
+
+                <div class="my-6 p-6 rounded-xl bg-obsidian border border-gold-500/30 space-y-3">
+                    <h4 class="font-heading text-sm text-gold-400 font-bold uppercase tracking-wider"><i class="fa-solid fa-magnifying-glass mr-2"></i> Jean-François Champollion'un Dahi Çözüm Yöntemi (1822)</h4>
+                    <p class="font-body text-base text-parchment-200">
+                        Yüzyıllar boyunca hiyerogliflerin sadece sembolik resimler olduğu sanılıyordu. Fransız dilbilimci Jean-François Champollion, hiyerogliflerin hem fonetik (ses) hem de ideografik (kavram) değer taşıdığını keşfetti. Champollion, Yunan metnindeki "Ptolemaios" ve "Kleopatra" isimlerinin hiyeroglif metnindeki oval çerçeveler (kartuşlar) içinde yazıldığını fark ederek harf-ses eşleştirmesini başardı. 1822 yılında Paris'te yayınladığı bildiriyle hiyerogliflerin 2000 yıllık şifresini tamamen çözdü.
+                    </p>
+                </div>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">3. Mısırbilim (Mısırloji) Biliminin Doğuşu</h3>
+                <p>
+                    Rosetta Taşı sayesinde Antik Mısır'ın piramit duvarlarındaki, papirüslerdeki ve tapınaklardaki binlerce yıllık tarihi, edebiyatı ve din anlayışı okunabilir hale gelmiştir. İngilizlerin Fransızları Mısır'da mağlup etmesiyle 1802 yılında İngiltere'ye götürülen Rosetta Taşı, günümüzde Londra'daki British Museum'un en çok ziyaret edilen ana sergi parçasıdır.
+                </p>
+            </div>
+        </article>
+
+        <!-- TOPIC 4: GÖBEKLİTEPE: TARİHİN YENİDEN YAZILIŞI -->
+        <article id="gobeklitepe" class="bg-parchment-900/90 border border-gold-500/40 rounded-2xl p-6 sm:p-12 shadow-2xl space-y-8 relative overflow-hidden">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gold-500/20 pb-6">
+                <div>
+                    <span class="text-gold-400 font-heading text-xs uppercase tracking-widest font-bold">IV. Bölüm</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl text-gold-300 font-bold">Göbeklitepe: Tarihin Yeniden Yazılışı</h2>
+                    <p class="font-body text-lg text-ink-100 italic">M.Ö. 9600 yılına uzanan insanlık tarihinin bilinen en eski inanç ve tapınak kompleksi.</p>
+                </div>
+                <div class="text-xs font-sans text-gold-400/90 bg-obsidian/80 px-4 py-2 rounded border border-gold-500/30 text-right">
+                    <div>Tarih: <strong>M.Ö. 9600 (Çanak Çömleksiz Neolitik)</strong></div>
+                    <div>Konum: <strong>Örencik / Şanlıurfa</strong></div>
+                </div>
+            </div>
+
+            <div class="history-illustration" role="img" aria-label="Taşların Anlattığı Tarih temalı editoryal illüstrasyon">
+                <div><div class="art-caption">Taşların Anlattığı Tarih</div><div class="art-subtitle">M.Ö. 9600 • Şanlıurfa</div></div>
+                <i class="fa-solid fa-landmark art-icon"></i><span class="art-stamp">NEOLITHIC</span>
+            </div>
+            <div class="space-y-6 font-body text-lg sm:text-xl text-parchment-200 leading-relaxed">
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">1. Klaus Schmidt ve Şanlıurfa Örencik Keşfi</h3>
+                <p>
+                    1994 yılında Alman Arkeolog Prof. Dr. Klaus Schmidt tarafından Şanlıurfa kent merkezinin 18 kilometre kuzeydoğusundaki Örencik Köyü yakınlarında başlatılan kazılar, arkeoloji dünyasını temelden sarsmıştır. İngiltere'deki Stonehenge'den 6.000 yıl, Mısır Piramitleri'nden ise 7.000 yıl daha eski olan Göbeklitepe, insanlık tarihinin bilinen en eski anıtsal yapılar topluluğudur.
+                </p>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">2. "Önce Tapınak Geldi": Klasik Tarih Teorisinin Çöküşü</h3>
+                <p>
+                    Göbeklitepe bulunana kadar kabul gören klasik tarih tezine göre; insanlar önce yerleşik hayata geçmiş, tarım ve hayvancılığı öğrenmiş, ardından şehirler kurup en son aşamada tapınaklar inşa etmişlerdi. Ancak Göbeklitepe'yi inşa eden topluluk henüz tarımı bilmeyen, çanak çömlek yapamayan avcı-toplayıcı insanlardı. Bu durum, inancın ve bir araya gelme arzusunun insanları yerleşik hayata ve tarıma yönlendirdiğini kanıtlayarak tarih kitaplarındaki sıralamayı tam tersine çevirmiştir.
+                </p>
+
+                <div class="my-6 p-6 rounded-xl bg-obsidian border border-gold-500/30 space-y-3">
+                    <h4 class="font-heading text-sm text-gold-400 font-bold uppercase tracking-wider"><i class="fa-solid fa-archway mr-2"></i> T-Biçimli Dev Sütunlar ve Hayvan Kabartmaları</h4>
+                    <p class="font-body text-base text-parchment-200">
+                        Göbeklitepe'deki tapınaklar yuvarlak planlı olup merkezlerinde boyları 5.5 metreye, ağırlıkları 10 ile 50 tona ulaşan T-biçimli kireçtaşı sütunlar yer almaktadır. T şeklinin insan stilizasyonu olduğu (üst kısım baş, dikey kısım gövde, yanlarda kollar ve kemer kabartmaları) anlaşılmıştır. Sütunların üzerine işlenen yaban boğası, tilki, akrep, turna, yılan ve yaban domuzu kabartmaları son derece yüksek bir sanat estetiğini ve mitolojik anlatıyı sergilemektedir.
+                    </p>
+                </div>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">3. Gizemli Gömülme Süreci ve UNESCO Dünya Mirası</h3>
+                <p>
+                    Göbeklitepe'nin en ilginç yönlerinden biri de tapınakların yüzlerce yıl kullanıldıktan sonra yıkılmak yerine, tonlarca toprak ve taşla insan eliyle bilinçli olarak gömülmüş olmasıdır. Bu koruma sayesinde günümüze kadar el değmeden ulaşan alan, 2018 yılında UNESCO Dünya Mirası Kalıcı Listesi'ne alınmış ve Şanlıurfa "Tarihin Sıfır Noktası" olarak ilan edilmiştir.
+                </p>
+            </div>
+        </article>
+
+        <!-- TOPIC 5: İSTANBUL'UN FETHİ VE ŞAHİ TOPLARI -->
+        <article id="fetih" class="bg-parchment-900/90 border border-gold-500/40 rounded-2xl p-6 sm:p-12 shadow-2xl space-y-8 relative overflow-hidden">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gold-500/20 pb-6">
+                <div>
+                    <span class="text-gold-400 font-heading text-xs uppercase tracking-widest font-bold">V. Bölüm</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl text-gold-300 font-bold">İstanbul'un Fethi ve Şahi Topları</h2>
+                    <p class="font-body text-lg text-ink-100 italic">1453'te Orta Çağ'ı kapatıp Yeni Çağ'ı açan askeri mühendislik dehası.</p>
+                </div>
+                <div class="text-xs font-sans text-gold-400/90 bg-obsidian/80 px-4 py-2 rounded border border-gold-500/30 text-right">
+                    <div>Tarih: <strong>6 Nisan - 29 Mayıs 1453</strong></div>
+                    <div>Komutan: <strong>Sultan II. Mehmed (Fatih)</strong></div>
+                </div>
+            </div>
+
+            <div class="history-illustration" role="img" aria-label="Bir Çağın Dönüm Noktası temalı editoryal illüstrasyon">
+                <div><div class="art-caption">Bir Çağın Dönüm Noktası</div><div class="art-subtitle">1453 • İstanbul surları</div></div>
+                <i class="fa-solid fa-chess-rook art-icon"></i><span class="art-stamp">1453</span>
+            </div>
+            <div class="space-y-6 font-body text-lg sm:text-xl text-parchment-200 leading-relaxed">
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">1. Çağ Açıp Çağ Kapatan Vizyon</h3>
+                <p>
+                    21 yaşındaki Osmanlı Padişahı II. Mehmed, yüzyıllar boyunca Doğu Roma (Bizans) İmparatorluğu'na koruma sağlayan ve döneminin aşılması imkansız sayılan Teodosyus Surları'nı yıkmak için topçu teknolojisini tarihte ilk kez ana kuşatma silahı olarak kullanma kararı almıştır. Edirne'de kurulan dökümhanelerde bizzat hesaplamalarını II. Mehmed'in yaptığı devasa ateşli silahların üretimine başlanmıştır.
+                </p>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">2. Urban Usta ve Şahi Toplarının Teknik Dehası</h3>
+                <p>
+                    Macar döküm ustası Urban ile Osmanlı mühendisleri Saruca Sekban ve Mimar Muslihiddin'in ortak çalışmasıyla dökülen devasa toplara "Şahi" adı verilmiştir. Yaklaşık 8 metre uzunluğunda, 80 santim çapında ve 18 ton ağırlığındaki bu bronz toplar, 600 kilogramlık mermer gülleleri 1.5 kilometre mesafeye fırlatabilmekteydi. Topların Edirne'den İstanbul surları önüne getirilmesi için 60 öküz ve 200 kişilik özel bir yol düzenleme ekibi görev yapmıştır.
+                </p>
+
+                <div class="my-6 p-6 rounded-xl bg-obsidian border border-gold-500/30 space-y-3">
+                    <h4 class="font-heading text-sm text-gold-400 font-bold uppercase tracking-wider"><i class="fa-solid fa-ship mr-2"></i> Gemilerin Karadan Yürütülmesi ve Taktik Deha</h4>
+                    <p class="font-body text-base text-parchment-200">
+                        Bizans'ın Haliç girişine gerdiği devasa demir zincir nedeniyle donanma Haliç'e giremiyordu. Fatih Sultan Mehmed, 21-22 Nisan gecesi 72 parçalık Osmanlı kadırgasını Tophane sahilinden başlayıp Kasımpaşa'ya uzanan ahşap kalaslar ve zeytinyağlı kızaklar üzerinden karadan yürüterek Haliç'e indirmiştir. Bu hamle Bizans'ın savunma hatlarını tamamen bölmüş ve surların zayıflamasını sağlamıştır.
+                    </p>
+                </div>
+
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">3. 29 Mayıs 1453 Zafere Ulaşış ve Dünya Tarihine Etkisi</h3>
+                <p>
+                    53 gün süren aralıksız top atışları, lağım kazımları ve yürüyen kule taarruzlarının ardından 29 Mayıs 1453 Salı günü sabahı genel hücumla İstanbul fethedilmiştir. Fethi getiren Şahi topları, derebeyliklerin (feodalite) surlarının yıkılabileceğini göstererek Avrupa krallıklarının merkezi otorite kurmasına zemin hazırlamış, Doğu Roma'nın yıkılmasıyla İtalya'ya kaçan bilim insanları ise Rönesans hareketini başlatmıştır.
+                </p>
+            </div>
+        </article>
+
+        <!-- TOPIC 6: YAZININ İCADI -->
+        <article id="yazinin-icadi" class="bg-parchment-900/90 border border-gold-500/40 rounded-2xl p-6 sm:p-12 shadow-2xl space-y-8 relative overflow-hidden">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gold-500/30 pb-6">
+                <div>
+                    <span class="text-gold-400 font-heading text-xs uppercase tracking-widest font-bold">VI. Bölüm</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl text-gold-300 font-bold">Yazının İcadı: İnsanlığın Hafızası</h2>
+                    <p class="font-body text-lg text-ink-100 italic">Sözlü anlatımdan kalıcı kayda uzanan, uygarlık tarihini değiştiren gelişme.</p>
+                </div>
+                <div class="text-xs font-sans text-gold-400/90 bg-obsidian/80 px-4 py-2 rounded border border-gold-500/30 text-right">
+                    <div>Tarih: <strong>M.Ö. 3200 civarı</strong></div>
+                    <div>Bölge: <strong>Mezopotamya / Sümer</strong></div>
+                </div>
+            </div>
+            <div class="history-illustration" role="img" aria-label="Kil tablet ve çivi yazısı temalı editoryal illüstrasyon">
+                <div><div class="art-caption">Kil Tabletten Tarihe</div><div class="art-subtitle">M.Ö. 3200 civarı • Mezopotamya</div></div>
+                <i class="fa-solid fa-tablet-screen-button art-icon"></i><span class="art-stamp">CUNEIFORM</span>
+            </div>
+            <div class="space-y-6 font-body text-lg sm:text-xl text-parchment-200 leading-relaxed">
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">1. İlk Yazı Sistemlerinin Ortaya Çıkışı</h3>
+                <p>
+                    İnsan toplulukları büyüyüp tarım, hayvancılık ve ticaret geliştikçe ürünleri, borçları ve alışverişleri kaydetme ihtiyacı arttı. Güney Mezopotamya'da Sümerlerin kullandığı işaretler zamanla sistemli bir yazıya dönüştü. Kil tabletler üzerine kamıştan bir araçla bastırılan kama biçimli izler, çivi yazısı olarak bilinir.
+                </p>
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">2. Yazı Neden Bir Dönüm Noktasıydı?</h3>
+                <p>
+                    Yazı sayesinde bilgiler yalnızca hafızaya ve sözlü aktarıma bağlı kalmadı. Yönetim kayıtları, ticari hesaplar, yasalar, mektuplar ve edebî anlatılar daha kalıcı biçimde saklanıp kuşaklara aktarılabildi. Bu gelişme, devlet örgütlenmesinin ve karmaşık toplumların gelişmesine önemli katkı sağladı.
+                </p>
+                <div class="my-6 p-6 rounded-xl bg-obsidian border border-gold-500/30 space-y-3">
+                    <h4 class="font-heading text-sm text-gold-400 font-bold uppercase tracking-wider"><i class="fa-solid fa-book-open mr-2"></i> Kil Tabletlerden Kütüphanelere</h4>
+                    <p class="font-body text-base text-parchment-200">
+                        İlk yazılı kayıtların önemli bir bölümü hesap ve envanterlerle ilgiliydi. Zamanla yazı; edebiyat, hukuk, bilim ve inanç alanlarında da kullanıldı. Böylece geçmişte yaşananların kayda geçirilmesi, tarih araştırmalarının temel kaynaklarından birini oluşturdu.
+                    </p>
+                </div>
+                <h3 class="font-heading text-xl text-gold-400 font-bold border-l-4 border-gold-500 pl-3">3. Tarih Çağlarının Başlangıcı</h3>
+                <p>
+                    Geleneksel tarih sınıflandırmasında yazının kullanılmaya başlanması, tarih öncesi dönemlerden tarih çağlarına geçişin ölçütü kabul edilir. Yazının farklı toplumlarda farklı zamanlarda ortaya çıktığı unutulmamalıdır; bu nedenle söz konusu tarih, bütün dünyada aynı anda gerçekleşen tek bir olay değildir.
+                </p>
+            </div>
+        </article>
+
+        <!-- KNOWLEDGE QUIZ SECTION -->
+        <section id="quiz" class="bg-parchment-900 border-2 border-gold-500/50 rounded-2xl p-6 sm:p-10 shadow-2xl space-y-8">
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 font-heading text-xs uppercase tracking-wider">
+                    <i class="fa-solid fa-clipboard-check"></i> Öğrenme Değerlendirme Testi
+                </div>
+                <h2 class="font-heading text-3xl sm:text-4xl text-gold-300 font-bold">5 BÜYÜK OLAY BİLGİ TESTİ</h2>
+                <p class="font-body text-lg text-ink-100">Hazırlayan: <span class="text-gold-400 font-bold">R. Can ARMAN</span></p>
+            </div>
+
+            <div id="quizContainer" class="space-y-6">
+                <!-- Dynamic Quiz Question Card -->
+            </div>
+
+            <div id="quizResultView" class="hidden text-center space-y-4 py-6 border-t border-gold-500/30">
+                <div class="text-4xl text-gold-400"><i class="fa-solid fa-trophy"></i></div>
+                <h3 class="font-heading text-2xl text-gold-300 font-bold">Tebrikler! Testi Tamamladınız.</h3>
+                <p id="quizFinalScore" class="font-body text-xl text-parchment-200"></p>
+                <button onclick="resetQuiz()" class="px-6 py-2.5 rounded bg-gold-500 text-obsidian font-heading font-bold text-xs uppercase tracking-wider hover:bg-gold-400 transition-all">
+                    Testi Yeniden Çöz
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-obsidian border-t border-gold-500/30 py-10 px-4 text-center font-sans text-xs text-ink-100/70">
+        <div class="max-w-7xl mx-auto space-y-4">
+            <div class="flex items-center justify-center gap-2 text-gold-400 font-heading text-sm font-bold">
+                <i class="fa-solid fa-graduation-cap"></i> TARİH DERSİ AKADEMİK ARAŞTIRMA ÖDEVİ
+            </div>
+            <p class="text-gold-300 font-semibold text-base">Hazırlayan: <span class="text-gold-400 underline decoration-gold-500/50">R. Can ARMAN</span></p>
+            <p class="max-w-md mx-auto text-ink-300 text-[11px] leading-relaxed">
+                Bu web sitesi Türk ve Dünya tarihine damga vuran 6 büyük olayın akademik ve görsel detaylarla sunulması amacıyla hazırlanmıştır.
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Reading Progress Bar
+        window.onscroll = () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        };
+
+        // Portal Overlay Controls
+        function openPortal() {
+            document.getElementById('entryPortal').classList.remove('hidden');
+        }
+
+        function selectPortalTopic(topicId) {
+            document.getElementById('entryPortal').classList.add('hidden');
+            if (topicId !== 'all') {
+                const element = document.getElementById(topicId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        // MP3 dosyasını doğrudan sitenin içinde oynat.
+        // GitHub deposuna bu HTML dosyasıyla aynı klasöre "muzik.mp3" eklenmelidir.
+        function toggleBackgroundMusic() {
+            const panel = document.getElementById('musicPlayerPanel');
+            const audio = document.getElementById('backgroundAudio');
+            const label = document.getElementById('musicToggleLabel');
+            const opening = panel.classList.contains('hidden');
+            panel.classList.toggle('hidden', !opening);
+            document.getElementById('musicToggleBtn').setAttribute('aria-expanded', String(opening));
+            if (opening) {
+                label.textContent = 'Tını Durdur';
+                audio.play().catch(() => {
+                    // Tarayıcı otomatik oynatmayı engellerse paneldeki oynat düğmesine basılabilir.
+                    label.textContent = 'Tını Başlat';
+                });
+            } else {
+                audio.pause();
+                label.textContent = 'Tını Başlat';
+            }
+        }
+        // Şarkı 3:25'e (205 saniye) gelince otomatik olarak başa sarar.
+        (function setMusicLoopPoint() {
+            const audio = document.getElementById('backgroundAudio');
+            const loopAtSeconds = 3 * 60 + 25;
+            audio.addEventListener('timeupdate', () => {
+                if (audio.currentTime >= loopAtSeconds) {
+                    audio.currentTime = 0;
+                    if (!audio.paused) audio.play().catch(() => {});
+                }
+            });
+        })();
+
+        function closeMusicPanel() {
+            document.getElementById('musicPlayerPanel').classList.add('hidden');
+            document.getElementById('backgroundAudio').pause();
+            document.getElementById('musicToggleBtn').setAttribute('aria-expanded', 'false');
+            document.getElementById('musicToggleLabel').textContent = 'Tını Başlat';
+        }
+
+        // Quiz Data and Engine
+        const quizData = [
+            {
+                q: "Piri Reis'in 1513 tarihli dünya haritası 1929 yılında nerede tesadüfen bulunmuştur?",
+                options: ["Topkapı Sarayı Müzesi", "Ayasofya Camii Arşivi", "Süleymaniye Kütüphanesi", "Gelibolu Kaymakamlığı"],
+                correct: 0
+            },
+            {
+                q: "Hezarfen Ahmed Çelebi'nin 1632 yılındaki tarihi Galata uçuşunu aktaran temel yazılı kaynak hangisidir?",
+                options: ["Katip Çelebi - Cihannüma", "Evliya Çelebi - Seyahatname", "Aşıkpaşazade Tarihi", "Peçevi Tarihi"],
+                correct: 1
+            },
+            {
+                q: "Rosetta Taşı'ndaki hiyerogliflerin şifresini 1822 yılında çözen Fransız dilbilimci kimdir?",
+                options: ["Pierre Bouchard", "Howard Carter", "Jean-François Champollion", "Gustav Deissmann"],
+                correct: 2
+            },
+            {
+                q: "Göbeklitepe'nin keşfi tarih biliminde hangi temel ezberi altüst etmiştir?",
+                options: ["Piramitlerin yapılış tarihini", "Din ve tapınakların tarımdan ÖNCE inşa edildiğini", "Yazının Sümerler tarafından bulunduğunu", "Ateşin bulunma zamanını"],
+                correct: 1
+            },
+            {
+                q: "İstanbul'un Fethi'nde surları yıkmak üzere dökülen devasa bronz toplara ne ad verilir?",
+                options: ["Balyemez", "Havan", "Şahi", "Şakaloz"],
+                correct: 2
+            },
+            {
+                q: "Sümerlerin kil tabletler üzerine yazdığı kama biçimli yazı sistemi hangisidir?",
+                options: ["Hiyeroglif", "Çivi yazısı", "Latin alfabesi", "Demotik yazı"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userScore = 0;
+
+        function renderQuizQuestion() {
+            const container = document.getElementById('quizContainer');
+            if (currentQuestion >= quizData.length) {
+                container.classList.add('hidden');
+                document.getElementById('quizResultView').classList.remove('hidden');
+                document.getElementById('quizFinalScore').textContent = `${quizData.length} sorudan ${userScore} tanesini doğru yanıtladınız. (Not: ${Math.round(userScore * 100 / quizData.length)}/100)`;
+                return;
+            }
+
+            const q = quizData[currentQuestion];
+            container.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center text-xs font-heading text-gold-400 border-b border-gold-500/20 pb-2">
+                        <span>Soru ${currentQuestion + 1} / ${quizData.length}</span>
+                        <span>Mevcut Başarı: ${Math.round(userScore * 100 / quizData.length)} Puan</span>
+                    </div>
+                    <h3 class="font-heading text-xl text-parchment-100 font-bold">${q.q}</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        ${q.options.map((opt, i) => `
+                            <button onclick="checkQuizAnswer(${i})" class="p-4 rounded-xl bg-obsidian border border-gold-500/30 hover:border-gold-500 text-left font-body text-lg text-parchment-200 hover:text-gold-300 transition-all flex justify-between items-center group">
+                                <span>${opt}</span>
+                                <i class="fa-solid fa-chevron-right text-xs text-gold-500/40 group-hover:text-gold-400"></i>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkQuizAnswer(selectedIdx) {
+            if (selectedIdx === quizData[currentQuestion].correct) {
+                userScore++;
+            }
+            currentQuestion++;
+            renderQuizQuestion();
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            userScore = 0;
+            document.getElementById('quizResultView').classList.add('hidden');
+            document.getElementById('quizContainer').classList.remove('hidden');
+            renderQuizQuestion();
+        }
+
+        // Initialize Page
+        window.onload = () => {
+            renderQuizQuestion();
+        };
+    </script>
+</body>
+</html>
